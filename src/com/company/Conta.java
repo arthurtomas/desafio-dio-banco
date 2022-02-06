@@ -56,7 +56,7 @@ public abstract class Conta implements IConta {
         Scanner sc = new Scanner(System.in);
         int count =0;
         int meses;
-        double taxaJuros = 0.0005; // 0,5% ao mês
+        double taxaJuros = 0.005; // 0,5% ao mês
         double montante = saldo;
         System.out.print("Digite a quantidade de meses que deseja simular o rendimento: ");
         meses = sc.nextInt();
