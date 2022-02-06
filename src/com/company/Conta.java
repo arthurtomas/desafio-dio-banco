@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public abstract class Conta implements IConta {
 
     private static final int AGENCIA_PADRAO = 1;
@@ -47,6 +49,26 @@ public abstract class Conta implements IConta {
     public void transferir(double valor, Conta contaDestino) {
         this.sacar(valor);
         contaDestino.depositar(valor);
+    }
+
+    @Override
+    public void simularRendimento(double saldo){
+        Scanner sc = new Scanner(System.in);
+        int count =0;
+        int meses;
+        double taxaJuros = 0.0005; // 0,5% ao mês
+        double montante = saldo;
+        System.out.print("Digite a quantidade de meses que deseja simular o rendimento: ");
+        meses = sc.nextInt();
+        while(count < meses){
+            montante *= (1+taxaJuros);
+            count++;
+        }
+        if (meses == 1)
+            System.out.printf("Após "+meses+" mês você terá R$ "+"%.2f%n", montante);
+        else
+            System.out.printf("Após "+meses+" meses você terá R$ "+"%.2f%n", montante);
+
     }
 
 }

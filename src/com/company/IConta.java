@@ -10,4 +10,6 @@ public interface IConta {
 
     void imprimirExtrato();
 
+    void simularRendimento(double saldo);
+
 }
